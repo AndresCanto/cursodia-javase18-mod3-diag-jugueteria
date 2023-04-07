@@ -2,9 +2,6 @@ package sistemaJugueteria;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
-import java.util.Iterator;
 
 import javax.swing.JOptionPane;
 
@@ -33,6 +30,8 @@ public class Controlador implements ActionListener
 				e.printStackTrace();
 			}
 		}
+		
+		
 		vis.btnPrimero.addActionListener(this);
 		vis.btnAnterior.addActionListener(this);
 		vis.btnSiguiente.addActionListener(this);
@@ -43,8 +42,20 @@ public class Controlador implements ActionListener
 		vis.btnEliminar.addActionListener(this);
 		vis.btnCancelar.addActionListener(this);
 		vis.btnSalir.addActionListener(this);
-		JulioCepeda.leerArchivoCrearLista(); //decia que lo quitara pero nose porque
+		
+		
+		JulioCepeda.leerArchivoCrearLista();
 		if(JulioCepeda.getInventarioSize()>0)
+		{
+			toy = JulioCepeda.getJuguetes(0);
+			this.fillFields();
+			for (Juguete j : JulioCepeda.listaJuguetes) 
+			{
+				System.out.println(j.toString());
+			}
+			vis.btnGuardar.setEnabled(false);
+		}
+		else if(JulioCepeda.getInventarioSize()==1)
 		{
 			toy = JulioCepeda.getJuguetes(0);
 			fillFields();
@@ -53,13 +64,15 @@ public class Controlador implements ActionListener
 				System.out.println(j.toString());
 			}
 		}
-		int close = vis.getDefaultCloseOperation();
-		System.out.println(close);
-//		if(vis.getDefaultCloseOperation()==0)
-//		{
-//			JulioCepeda.leerListaEscribirArchivo();
-//			System.out.println("ola");
-//		}
+		else 
+		{
+			this.clearFields();
+			this.setEditableFields(true);
+			this.setEnabledNavBtns(false);
+			this.setEnabledCrudBtns(false);
+			vis.btnNuevo.setEnabled(true);
+			vis.btnSalir.setEnabled(true);
+		}
 	}
 	
 	@Override
