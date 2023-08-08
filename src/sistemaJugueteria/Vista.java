@@ -52,11 +52,9 @@ public class Vista extends JFrame {
 			}
 		});
 	}
-
-	/**
-	 * Create the frame.
-	 */
-	public void crearGUI() {
+	
+	public void crearGUI() 
+	{
 		setTitle("Jugueteria Andres");
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE); 
 		
@@ -67,71 +65,71 @@ public class Vista extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JPanel panel_datos = new JPanel();
-		panel_datos.setLayout(null);
-		panel_datos.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "DATOS", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel_datos.setBounds(20, 11, 411, 122);
-		contentPane.add(panel_datos);
+		JPanel pnlDatos = new JPanel();
+		pnlDatos.setLayout(null);
+		pnlDatos.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, new Color(255, 255, 255), new Color(160, 160, 160)), "DATOS", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		pnlDatos.setBounds(20, 11, 411, 122);
+		contentPane.add(pnlDatos);
 		
 		JLabel lbId = new JLabel("Clave:");
 		lbId.setHorizontalAlignment(SwingConstants.TRAILING);
 		lbId.setBounds(6, 22, 63, 14);
-		panel_datos.add(lbId);
+		pnlDatos.add(lbId);
 		
 		txtId = new JTextField();
 		txtId.setColumns(10);
 		txtId.setBounds(79, 19, 86, 20);
-		panel_datos.add(txtId);
+		pnlDatos.add(txtId);
 		
 		JLabel lbNom = new JLabel("Nombre:");
 		lbNom.setHorizontalAlignment(SwingConstants.TRAILING);
 		lbNom.setBounds(6, 58, 63, 14);
-		panel_datos.add(lbNom);
+		pnlDatos.add(lbNom);
 		
 		txtNom = new JTextField();
 		txtNom.setColumns(10);
 		txtNom.setBounds(79, 55, 153, 20);
-		panel_datos.add(txtNom);
+		pnlDatos.add(txtNom);
 		
 		JLabel lbPre = new JLabel("Precio:");
 		lbPre.setHorizontalAlignment(SwingConstants.TRAILING);
 		lbPre.setBounds(6, 99, 63, 14);
-		panel_datos.add(lbPre);
+		pnlDatos.add(lbPre);
 		
 		txtPre = new JTextField();
 		txtPre.setColumns(10);
 		txtPre.setBounds(79, 96, 86, 20);
-		panel_datos.add(txtPre);
+		pnlDatos.add(txtPre);
 		
 		JLabel lbMarc = new JLabel("Marca:");
 		lbMarc.setHorizontalAlignment(SwingConstants.TRAILING);
 		lbMarc.setBounds(242, 19, 63, 14);
-		panel_datos.add(lbMarc);
+		pnlDatos.add(lbMarc);
 		
 		txtMarc = new JTextField();
 		txtMarc.setColumns(10);
 		txtMarc.setBounds(315, 16, 86, 20);
-		panel_datos.add(txtMarc);
+		pnlDatos.add(txtMarc);
 		
 		JLabel lbCat = new JLabel("Categoria:");
 		lbCat.setHorizontalAlignment(SwingConstants.TRAILING);
 		lbCat.setBounds(242, 55, 63, 14);
-		panel_datos.add(lbCat);
+		pnlDatos.add(lbCat);
 		
 		txtCat = new JTextField();
 		txtCat.setColumns(10);
 		txtCat.setBounds(315, 52, 86, 20);
-		panel_datos.add(txtCat);
+		pnlDatos.add(txtCat);
 		
 		JLabel lbStock = new JLabel("Stock:");
 		lbStock.setHorizontalAlignment(SwingConstants.TRAILING);
 		lbStock.setBounds(242, 96, 63, 14);
-		panel_datos.add(lbStock);
+		pnlDatos.add(lbStock);
 		
 		txtStock = new JTextField();
 		txtStock.setColumns(10);
 		txtStock.setBounds(315, 93, 86, 20);
-		panel_datos.add(txtStock);
+		pnlDatos.add(txtStock);
 		
 		JPanel panel_nav = new JPanel();
 		panel_nav.setLayout(null);
